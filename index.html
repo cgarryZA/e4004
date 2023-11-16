@@ -1,0 +1,570 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>e4004</title>
+        <script language="JavaScript" type="text/javascript" src="4004cpu.js"></script>
+        <script language="JavaScript" type="text/javascript" src="4004gui.js"></script>
+        <script language="JavaScript" type="text/javascript" src="screen.js"></script>
+        <link rel="stylesheet" href="4004_style.css" type="text/css">
+    </head>
+    <body>
+
+        <div id="main">
+            <!--RAM BOX 0,1, I/O-->
+            <div id="left">
+                <h3>4002 RAM:
+                        <select id="select1-1">
+                            <option value="0" selected="selected">BANK #0</option>
+                            <option value="1">BANK #1</option>
+                            <option value="2">BANK #2</option>
+                            <option value="3">BANK #3</option>
+                        </select>
+                        <select id="select1-2">
+                            <option value="0" selected="selected">CHIP #0</option>
+                            <option value="1">CHIP #1</option>
+                            <option value="2">CHIP #2</option>
+                            <option value="3">CHIP #3</option>
+                        </select>
+                </h3>
+
+                <!--RAM BOX 0-->
+                <div id="ram_0" class="box ram">
+
+                        <!--Main Memory-->
+                        <table id="memory_0" class="memory">
+                            <!--Headings-->
+                            <tr>
+                                <th style="width: 100px;"></th><th colspan="17">MAIN MEMORY</th>
+                            </tr>                            
+                            <tr>
+                                <th></th>
+                                <th>0</th>
+                                <th>1</th>
+                                <th>2</th>
+                                <th>3</th>
+                                <th>4</th>
+                                <th>5</th>
+                                <th>6</th>
+                                <th>7</th>
+                                <th>8</th>
+                                <th>9</th>
+                                <th>A</th>
+                                <th>B</th>
+                                <th>C</th>
+                                <th>D</th>
+                                <th>E</th>
+                                <th>F</th>
+                            </tr>
+                            <!--REGISTER 0-->
+                            <tr>
+                                <th class="left">REGISTER 0</th>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <!--REGISTER 1-->
+                            <tr>
+                                <th class="left">REGISTER 1</th>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <!--REGISTER 2-->
+                            <tr>
+                                <th class="left">REGISTER 2</th>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <!--REGISTER 3-->
+                            <tr>
+                                <th class="left">REGISTER 3</th>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>				
+                        </table>
+
+                        <!--Status-->
+                        <table id="status_0" class="status">
+                            <!--Headings-->
+                            <tr>
+                                <th colspan="4">STATUS</th>
+                            </tr>
+                            <tr>
+                                <th>0</th><th>1</th><th>2</th><th>3</th>
+                            </tr>
+                            <!--Register 0-->
+                            <tr>
+                                <td>0</td><td>0</td><td>0</td><td>0</td>
+                            </tr>		
+                            <!--Register 1-->
+                            <tr>
+                                <td>0</td><td>0</td><td>0</td><td>0</td>
+                            </tr>	
+                            <!--Register 2-->	
+                            <tr>
+                                <td>0</td><td>0</td><td>0</td><td>0</td>
+                            </tr>		
+                            <!--Register 3-->
+                            <tr>
+                                <td>0</td><td>0</td><td>0</td><td>0</td>
+                            </tr>				
+                        </table>
+                        <br style="clear: both;">
+
+                        <!--Outputs-->
+                        <h3>OUTPUTS:</h3>
+                        <table id="outputs_0" class="outputs">                            
+                            <!--Headings-->
+                            <tr>
+                                <th class="left">Q0</th>
+                                <th class="left">Q1</th>
+                                <th class="left">Q2</th>
+                                <th class="left">Q3</th>
+                            </tr>
+
+                            <!--Values-->
+                            <tr>
+                                <td><input type="radio" disabled="disabled"></td>
+                                <td><input type="radio" disabled="disabled"></td>
+                                <td><input type="radio" disabled="disabled"></td>
+                                <td><input type="radio" disabled="disabled"></td>
+                            </tr>
+                        </table>
+                        <input type="button" value="RESET" name="reset" class="reset">
+                </div>
+                    
+                
+                <h3>4002 RAM:
+                    <select id="select2-1">
+                        <option value="0" selected="selected">BANK #0</option>
+                        <option value="1">BANK #1</option>
+                        <option value="2">BANK #2</option>
+                        <option value="3">BANK #3</option>
+                    </select>
+                    <select id="select2-2">
+                        <option value="0">CHIP #0</option>
+                        <option value="1" selected="selected">CHIP #1</option>
+                        <option value="2">CHIP #2</option>
+                        <option value="3">CHIP #3</option>
+                    </select>
+                </h3>
+
+                <!--RAM BOX 1-->
+                <div id="ram_1" class="box ram">
+                    <!--Main Memory-->
+                    <table id="memory_1" class="memory">
+                        <!--Headings-->
+                        <tr>
+                            <th style="width: 100px;"></th>
+                            <th colspan="17">MAIN MEMORY</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th>0</th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                            <th>5</th>
+                            <th>6</th>
+                            <th>7</th>
+                            <th>8</th>
+                            <th>9</th>
+                            <th>A</th>
+                            <th>B</th>
+                            <th>C</th>
+                            <th>D</th>
+                            <th>E</th>
+                            <th>F</th>
+                        </tr>
+                        
+                        <!--Register 0-->
+                        <tr>
+                            <th class="left">REGISTER 0</th>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <!--Register 1-->
+                        <tr>
+                            <th class="left">REGISTER 1</th>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <!--Register 2-->
+                        <tr>
+                            <th class="left">REGISTER 2</th>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <!--Register 3-->
+                        <tr>
+                            <th class="left">REGISTER 3</th>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+
+                    <!--Status-->
+                    <table id="status_1" class="status">
+                        <!--Headings-->
+                        <tr>
+                            <th colspan="4">STATUS</th>
+                        </tr>
+                        <tr>
+                            <th>0</th><th>1</th><th>2</th><th>3</th>
+                        </tr>
+                        <!--Register 0-->
+                        <tr>
+                            <td>0</td><td>0</td><td>0</td><td>0</td>
+                        </tr>		
+                        <!--Register 1-->
+                        <tr>
+                            <td>0</td><td>0</td><td>0</td><td>0</td>
+                        </tr>	
+                        <!--Register 2-->	
+                        <tr>
+                            <td>0</td><td>0</td><td>0</td><td>0</td>
+                        </tr>	
+                        <!--Register 3-->	
+                        <tr>
+                            <td>0</td><td>0</td><td>0</td><td>0</td>
+                        </tr>				
+                    </table>
+                    
+                    <br style="clear: both;">
+
+                    <!--Outputs-->
+                    <h3>OUTPUTS:</h3>
+                    <table id="outputs_1" class="outputs">
+                        <!--Headings-->
+                        <tr>
+                            <th class="left">Q0</th>
+                            <th class="left">Q1</th>
+                            <th class="left">Q2</th>
+                            <th class="left">Q3</th>
+                        </tr>
+                        <!--Values-->
+                        <tr>
+                            <td><input type="radio" disabled="disabled"></td>
+                            <td><input type="radio" disabled="disabled"></td>
+                            <td><input type="radio" disabled="disabled"></td>
+                            <td><input type="radio" disabled="disabled"></td>
+                        </tr>
+                    </table>
+
+                    <input type="button" value="RESET" name="reset" class="reset">
+                </div>
+                    
+                
+                <h3>4001 ROM:</h3>
+
+                <!--I/O-->
+                <div id="io" class="box">
+                    <b>I/O PORT:</b>
+                    <table id="port" class="port">
+
+                        <!--Headings-->
+                        <tr>
+                            <th class="left">Q0</th>
+                            <th class="left">Q1</th>
+                            <th class="left">Q2</th>
+                            <th class="left">Q3</th>
+                        </tr>
+
+                        <!--Values-->
+                        <tr>
+                            <td><input type="radio" disabled="disabled"></td>
+                            <td><input type="radio" disabled="disabled"></td>
+                            <td><input type="radio" disabled="disabled"></td>
+                            <td><input type="radio" disabled="disabled"></td>
+                        </tr>
+
+                    </table>
+                </div>	
+
+                <div id="canvas-container">
+                    <canvas id="quad1" width="160" height="160"></canvas><canvas id="quad2" width="160" height="160"></canvas>
+                </div>
+
+                <div id="canvas-container2">
+                    <canvas id="quad3" width="160" height="160"></canvas><canvas id="quad4" width="160" height="160"></canvas>
+                </div>
+            </div>
+
+            <!--PC, SCRATCH, FLAGS, Controls-->
+            <div id="right">
+                <h3>4004 CPU:</h3>
+                <div id="cpu" class="box">
+                    <div class="leftDiv">
+                        <!--Program Counter-->
+                        <table id="pc">
+                            <!--Headings-->
+                            <tr>
+                                <th style="width:80px;"></th>
+                                <td colspan="3"><span>STACK</span></td>
+                            </tr>
+                            <!--PC-->
+                            <tr>
+                                <th class="left">PC</th>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+
+                            <!--Level 1-->
+                            <tr>
+                                <th class="left">LEVEL 1</th>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+
+                            <!--Level 2-->
+                            <tr>
+                                <th class="left">LEVEL 2</th>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+
+                            <!--Level 3-->
+                            <tr>
+                                <th class="left">LEVEL 3</th>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </table>
+                        <!--Scratch Pad-->
+                        <table id="registers">
+                            <!--Headings-->
+                            <tr>
+                                <td colspan="8"><span>REGISTERS</span></td>
+                            </tr>
+
+                            <!--R0R1, R8R9-->
+                            <tr>
+                                <th>R0</th>
+                                <th>R1</th>
+                                <td>0</td>
+                                <td>0</td>
+
+                                <th>R8</th>
+                                <th>R9</th>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+
+                            <!--R2R3, RARB-->
+                            <tr>
+                                <th>R2</th>
+                                <th>R3</th>
+                                <td>0</td>
+                                <td>0</td>
+
+                                <th>RA</th>
+                                <th>RB</th>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+
+                            <!--R4R5, RCRD-->
+                            <tr>
+                                <th>R4</th>
+                                <th>R5</th>
+                                <td>0</td>
+                                <td>0</td>
+
+                                <th>RC</th>
+                                <th>RD</th>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            
+                            <!--R6R7, RERF-->
+                            <tr>
+                                <th>R6</th>
+                                <th>R7</th>
+                                <td>0</td>
+                                <td>0</td>
+
+                                <th>RE</th>
+                                <th>RF</th>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+
+                        </table>
+
+                        <!--ACC CF T dASS Cycles-->
+                        <div>
+                            <span id="accu"><b>ACCUMULATOR:</b> <span>0 [0000]</span></span>
+                            <span id="carry"><b>CARRY:</b> <input type="checkbox" disabled="disabled"></span>
+                            <span id="test"><b>TEST:</b> <input type="checkbox" disabled="disabled"></span>
+                            <br><br>
+                            <span id="dassem"> <span>046 7B 45</span> <span>ISZ 7B 45</span></span>
+                            <span id="cycles"><b>CYCLES:</b> 0</span>
+                        </div>
+                    </div>
+                    <!--Sim Controls-->
+                    <div class="rightDiv">
+                        <input type="button" value="STEP" id="step"><br>
+                        <input type="button" value="ANIMATE" id="animate"><br>
+                        <input type="button" value="RUN" id="run"><br>
+                        <input type="button" value="STOP" id="stop"><br>
+                        <input type="button" value="RESET" id="resetCPU"><br>
+                    </div>
+                </div>
+
+                <h3>CONFIGURATION:</h3>
+                <div id="conf" class="box">
+                    <div class="leftDiv">
+                        <input type="radio" id="hardware_0" name="hardware" checked="true"> General<br>
+                        <input type="radio" id="hardware_1" name="hardware" onchange="testFlag = this.checked;"> Intel 4001-0009 hardware (<a href="./varia/MCS-4_Evaluation_Kit_4001_0009.pdf">link</a>)<br>
+                        <input type="radio" id="hardware_2" name="hardware" onchange="mcsFlag = this.checked;"> MCS-4/40 hardware (link)
+                    </div>
+    
+                    <div class="rightDiv">
+                        <input type="button" value="BreakPoints" id="bp"><br>
+                        <input type="button" value="RESET ALL" id="ra">
+                    </div>
+                </div>
+    
+                <h3>ROM block:</h3>
+                <div id="rom" class="box">
+                    <!--ROM input-->
+                    <div class="leftDiv">
+                        <textarea id="data"></textarea><br>
+                        <div style="margin-top: 10px;">
+                            <input type="checkbox" id="dasm"> <b>Assembling code</b>
+                            <input type="checkbox" id="ascii"> <b>ASCII</b>
+                        </div>
+                    </div>
+    
+                    <div class="rightDiv">
+                        <input type="button" value="LOAD" id="load"><br>
+                        <input type="button" value="RESET" id="resetROM"><br><br><br>
+                        <input type="button" value="P1" id="p1"><br>
+                        <input type="button" value="P2" id="p2"><br>
+                        <input type="button" value="P3" id="p3">
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <br style="clear: both;">
+        <div id="break"></div>
+    </body>
+</html>
