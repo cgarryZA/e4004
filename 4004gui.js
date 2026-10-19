@@ -1,3 +1,7 @@
+// i4004 emulator - gui functions
+// Maciej Szyc 2006, e4004.szyc.org
+// Modified by Christian Garry 2023. GPL-2.0-or-later, see LICENSE.
+
 
 // Disassemble functions
 

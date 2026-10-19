@@ -1,3 +1,22 @@
+/*
+   Intel 4004 microprocessor JavaScript emulator
+   by Maciej Szyc 2006, e4004'at'szyc.org
+
+   based on 6502 JavaScript emulator by N.Landsteiner
+
+   Modified by Christian Garry 2023; see README.md.
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+*/
+
 // global conf
 
 var debug=false;
